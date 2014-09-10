@@ -1,0 +1,465 @@
+Tools and Basics
+================
+
+Topics
+------
+
+-   Git
+
+    -   git-flow
+
+    -   Github
+
+    -   Sourcetree
+
+-   Text Editors
+
+    -   Sublime Text
+
+    -   A brief look at vim
+
+-   The command line
+
+Command Line
+------------
+
+It may not be all that pretty, but it's really powerful and efficient.
+
+Access via "command prompt" on Windows. Usually called "terminal" on Posix
+systems
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ cd ~/Development/rmcp
+$ bower install angular --save
+$ subl .
+$ grunt serve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Git
+---
+
+### What is Git?
+
+Git is a distributed revision control and source code management (SCM) system
+with an emphasis on speed, data integrity, and support for distributed,
+non-linear workflows.
+
+-   Every Git working directory is a full-fledged repository
+
+-   It has history
+
+-   It has full version tracking
+
+-   It can be used independent of a central server
+
+### History
+
+Git was created in 2005 by Linus Torvalds (creator and namesake of Linux
+kernel), when the service that had been providing source code management for the
+Linux kernal project decided that it would no longer provide free use to the
+project. It was created in C as a set of extensible tools to manage the Linux
+project, and has become the most popular system for version control and source
+code management.
+
+### Basic Terminology
+
+**Repository** - Full set of files and historical revision data on those files
+that are being managed together within version control
+
+**Working Directory** - The directory on a user's computer that contains the
+files under version control management, i.e. your copy of the files
+
+**Commit** - ​A snapshot of the files being version controlled at the time of
+creation or the act of creating this snapshot
+
+**Branch** - A timeline of commits
+
+**Tag** - A name attached to a single commit
+
+**HEAD** - The most recent commit on the selected branch
+
+**Staging Area** - The set of files that have been changed, whose changes will
+be captured in the next commit
+
+**Remote** - The server or centralized store for a repository
+
+**Clone** - Copy a repository from a remote to a new working directory,
+maintaining the link to the remote
+
+**Checkout** - Select a commit to use in your working directory
+
+**Merge** - Combine two branches back together into a single branch
+
+**Revert** - Create a commit that undoes a previous commit
+
+### How to Use Git to Source Control a Project
+
+1.  Pull the latest version from the remote
+
+2.  Make edits
+
+3.  Stage the affected files
+
+4.  Commit (with a good message)
+
+5.  Push to the remote
+
+### More about making a change
+
+#### A commit should encompass a single change
+
+-   May be multiple files
+
+-   May include new files
+
+-   Should not do multiple things
+
+#### Commit messages should be something worthwhile
+
+##### Examples of good commit messages
+
+-   "Add projectplace homepage box"
+
+-   "Remove protocol from Google Fonts URL"
+
+-   "Added support for new limelight player"
+
+-   "Changed version of Google Analytics call"
+
+##### Examples of bad messages
+
+-   "Per Linda"
+
+-   "​I should commit more"
+
+-   "Cleaning up"
+
+### SourceTree
+
+SourceTree is a GUI for Git. It makes life easier. It's free.
+
+#### Configuration
+
+1.  Use SourceTree's embedded Git, when asked
+
+2.  Set up your Github account information
+
+3.  HTTPS is easier to set up than SSH for authentication
+
+#### Using SourceTree
+
+To use SourceTree, it's the same terminology we've been using, but it provides
+easier views into:
+
+-   Pending Changes
+
+-   Staged Files
+
+-   History
+
+It's still the same order:
+
+1.  Pull from the remote
+
+2.  Work on the files you need to change
+
+3.  Stage files for commit
+
+4.  Commit with a good message
+
+5.  Push to remote
+
+### Github
+
+Github is, at its simplest, a server for remote repositories.
+
+It also combines "social" and project management features into the application
+and makes it easy for people to collaborate on a project.
+
+Open-source (public) repositories are free and you can have as many as you
+want.
+
+Everyone on the team has a Github account.
+
+#### Other Cool Features
+
+-   Issues
+
+-   README.md
+
+-   Github Pages (web site)
+
+-   Wiki
+
+-   Analytics
+
+-   Kanban boards (via Chrome extension)
+
+-   Forks and pull requests
+
+-   Very extensible via API
+
+### Git-flow
+
+Git-flow is a structured methodology for managing a project in Git, using
+branches and merging, as well as the tools that manage those processes. Kinda
+complicated, really powerful. Support in SourceTree.
+
+![](<http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png>)
+
+#### Branches in git-flow
+
+-   `master` - This is the default branch in a Git repository and is created at
+    repository creation.
+
+    -   Git-flow uses this for production code. Official release history (every
+        commit on master maps to a release version)
+
+-   `develop` - Working branch, or "edge." Holds new development that will be
+    released into production in the next cycle
+
+-   `feature/[name]` - Branches for development of new features, especially
+    large ones that may take multiple release cycles to be ready for production
+
+-   `release/[number]` - Code being prepared for production. Changes on this
+    branch are only bug fixes. QA branch
+
+-   `hotfix/[number]` - Immediate bug fix to production code
+
+#### The flow
+
+##### Add a new feature (feature branch)
+
+-   Branched off of `develop`
+
+-   Work continues on new `feature` branch
+
+-   Merged back into `develop`
+
+##### Create a new release
+
+-   `develop` branched into `release` branch
+
+    -   Any new changes after this point wait for the next cycle
+
+-   Bug fixes and QA on `release` branch
+
+-   `release` merged back into `develop` and `master`
+
+    -   `master` receives all new changes on `develop` that are QA'ed and
+        production-ready
+
+    -   `develop` receives all the bug fixes so that they don't need to be
+        changed again in next release
+
+##### Hotfix
+
+-   `master` branched to `hotfix` branch
+
+-   Fixes made to `hotfix`
+
+-   `hotfix` merged back into `master` and `develop`
+
+    -   No new features, only fixes to production code
+
+    -   `develop` receives the changes
+
+### Advanced Concepts
+
+#### Diff
+
+Comparing the differences between two documents is known as a `diff`, and can be
+done with any number of tools, including Beyond Compare, which has full support
+for use as a git diff tool.
+
+#### Merge
+
+When merging two branches, sometimes Git has trouble reconciling the changes,
+and you'll be required to fix them by hand. In this case, a merge tool is used
+to help the process. Again, Beyond Compare has support for git and can be used
+as your merge tool.
+
+#### Blame
+
+A blame in Git is a view of a document, line-by-line that shows who made the
+last change to a file, and in which commit. It's useful for blaming people for
+bugs, but moreso to know who to ask if you don't know why something was done the
+way that it was.
+
+#### Submodules
+
+Submodules are Git repositories within repositories. This can be very useful for
+including a project as a dependency or a library within another project, so that
+it can easily be updated, and to force the correct version. You should not,
+however, make changes to a submodule, as it becomes a huge pain.
+
+### Learn More
+
+-   [Git Homepage][6]
+
+-   [Github Guides][7]
+
+-   [Command-Line Cheat Sheet][8]
+
+-   [Git Immersion (Tutorials)][9]
+
+-   *Pro Git* Book
+
+    -   [Online][10]
+
+    -   [Dead Tree Version][11]
+
+    -   [PDF][12]
+
+    -   [mobi][13]
+
+    -   [ePub][14]
+
+-   [Git Real][15] (free online interactive course by Code School)
+
+-   [Try Git][16] (free basic interactive tutorial by Code School and Github)
+
+[6]: <http://git-scm.com/>
+
+[7]: <http://guides.github.com/>
+
+[8]: <https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf>
+
+[9]: <http://gitimmersion.com/>
+
+[10]: <http://git-scm.com/book>
+
+[11]: <http://www.amazon.com/gp/product/1430218339?ie=UTF8&camp=1789&creative=9325&creativeASIN=1430218339&linkCode=as2&tag=git-sfconservancy-20>
+
+[12]: <https://github.s3.amazonaws.com/media/progit.en.pdf>
+
+[13]: <https://github.s3.amazonaws.com/media/pro-git.en.mobi>
+
+[14]: <https://github.s3.amazonaws.com/media/progit.epub>
+
+[15]: <http://www.codeschool.com/courses/git-real>
+
+[16]: <http://try.github.com/>
+
+Sublime Text
+------------
+
+>   Sublime Text is a sophisticated text editor for code, markup and prose.  
+>   You'll love the slick user interface, extraordinary features and amazing
+>   performance.
+
+It's a really cool text editor for code. It's not an IDE.
+
+### Features
+
+-   Extensible
+
+-   Customizable
+
+-   Go-to with `Ctrl+P`
+
+-   Split editing
+
+-   Tabs
+
+-   Open a folder
+
+-   Nice themes
+
+-   Multiple selections
+
+### Download it
+
+-   [Sublime Text 3][1]
+
+-   Or you can Google "sublime text 3"
+
+[1]: <http://www.sublimetext.com/3>
+
+### Package Control
+
+>   The Sublime Text package manager that makes it exceedingly simple to find,
+>   install and keep packages up-to-date.
+
+It installs plugins and stuff really easily
+
+[Package Control][3] or Google "package control"
+
+[3]: <https://sublime.wbond.net/>
+
+### Learn More
+
+-   [Free tutorial from Tuts+][4][^17]
+
+[4]: <http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2>
+
+[^17]: Full disclosure: I haven't used this tutorial, I just found it online
+
+vim
+---
+
+-   Text editor based from the command line
+
+-   Extremely powerful, but also very complicated and hard to use
+
+-   High efficiency because everything is controlled from the keyboard
+
+-   Massive extensibility and customization options
+
+Practice Exercises
+------------------
+
+1.  Go over the [Git Real][5] course
+
+[5]: <https://www.codeschool.com/courses/git-real>
+
+1.  Do the following activity
+
+    1.  Create a new Git repository on your computer. Name it whatever you want.
+
+    2.  Add an `index.html` file to the directory. Make sure it is a valid HTML
+        page with some content.
+
+    3.  Commit this change
+
+    4.  Add a CSS file at `css/style.css` and link it into your index.html file.
+        Add whatever basic stylings you would like
+
+    5.  Commit these changes
+
+    6.  Create a remote repository for this on github and push these two changes
+        to the remote.
+
+    7.  Add jQuery to the page (you can use a CDN source or download it), and
+        add a JavaScript file at `js/main.js` that logs something to the console
+        on DOM ready. Make sure they are both linked to the `index.html` page
+
+    8.  Commit these changes
+
+    9.  Revert your CSS commit
+
+    10. Push to the remote
+
+    11. Initialize Git-flow on the repository
+
+    12. Create a feature branch called `css` and add a CSS file again.
+
+    13. Commit the changes and finish the feature
+
+    14. Push `develop` branch to the remote
+
+    15. Start a new release branch: `1.0.0`
+
+    16. Add a README.md file
+
+    17. Commit
+
+    18. Finish the release
+
+    19. Push all changes to the remote
+
+2.  Answer the questions in the example repository
+
+Your final repository should resemble the one [here][2]
+
+[2]: <https://github.com/crockett95/ll1-exercise>
