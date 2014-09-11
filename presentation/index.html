@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Git Basics & Tools</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -15,10 +15,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/css/blueimp-gallery.min.css">
+
+		<style type="text/css" media="screen">
+			.reveal dt { font-weight: bold; padding-top: 20px;}
+			.reveal dd { font-size: 80%; }
+		</style>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -43,321 +49,525 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<section>
+						<h1>Git & Basic Tools</h1>
+						<h3>Lunch & Learn: Session 1</h3>
+						
+							<p><small>Steve Crockett, Web Developer, Planview WCS</small></p>
+						
+					</section>
+
+					<section>
+						<h2>Topics</h2>
+
+						<ul>
+							<li>The command line</li>
+							<li>Git
+								<ul>
+									<li>Sourcetree</li>
+									<li>Github</li>
+									<li>git-flow</li>
+								</ul></li>
+							<li>Text Editors
+								<ul>
+									<li>Sublime Text</li>
+									<li>A brief look at vim</li>
+								</ul></li>
+						</ul>
+					</section>
 				</section>
-
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<section><h1>Command Line</h1>						
+					</section>
+					<section><h2>Command Line</h2>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+						<p>It may not be all that pretty, but it's really powerful and efficient.</p>
+
+						<p>Access via "command prompt" on Windows. Usually called "terminal" on Posix systems</p>
+
+						<pre><code class="bash" data-trim>$ cd ~/Development/rmcp
+	$ bower install angular --save
+	$ subl .
+	$ grunt serve
+						</code></pre>
+
+					</section>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section><h1>Git</h1>
 					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+
+					<section><h2>What is Git?</h2>
+
+						<p>Git is a distributed revision control and source code management (SCM) system with an emphasis on speed, data integrity, and support for distributed, non-linear workflows.</p>
+
+						<ul>
+							<li>Every Git working directory is a full-fledged repository</li>
+							<li>It has history</li>
+							<li>It has full version tracking</li>
+							<li>It can be used independent of a central server</li>
+						</ul>
 					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
+
+					<section><h2>History</h2>
+
+						<p>Git was created in 2005 by Linus Torvalds (creator and namesake of Linux kernel), when the service that had been providing source code management for the Linux kernal project decided that it would no longer provide free use to the project. It was created in C as a set of extensible tools to manage the Linux project, and has become the most popular system for version control and source code management.</p>
 					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+
+					<section><h2>Basic Terminology</h2>
+						<dl>
+							<dt>Repository</dt>
+							<dd>Full set of files and historical revision data on those files that are being managed together within version control</dd>
+							<dt>Working Directory</dt>
+							<dd>The directory on a user's computer that contains the files under version control management, i.e. your copy of the files</dd>
+							<dt>Commit</dt>
+							<dd>A snapshot of the files being version controlled at the time of creation or the act of creating this snapshot</dd>
+							<dt>Branch</dt>
+							<dd>A timeline of commits</dd>
+						</dl>
 					</section>
-				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section><h2>Terminology (cont.)</h2>
+						<dl>
+							<dt>Tag</dt>
+							<dd>A name attached to a single commit</dd>
+							<dt>HEAD</dt>
+							<dd>The most recent commit on the selected branch</dd>
+							<dt>Staging Area</dt>
+							<dd>The set of files that have been changed, whose changes will be captured in the next commit</dd>
+							<dt>Remote</dt>
+							<dd>The server or centralized store for a repository</dd>
+						</dl>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+
+					<section><h2>Terminology (cont.)</h2>
+						<dl>
+							<dt>Clone</dt>
+							<dd>Copy a repository from a remote to a new working directory, maintaining the link to the remote</dd>
+							<dt>Checkout</dt>
+							<dd>Select a commit to use in your working directory</dd>
+							<dt>Merge</dt>
+							<dd>Combine two branches back together into a single branch</dd>
+							<dt>Revert</dt>
+							<dd>Create a commit that undoes a previous commit</dd>
+						</dl>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
+					<section><h3>How to Use Git to Source Control a Project</h3>
 						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
+							<li>Pull the latest version from the remote</li>
+							<li>Make edits</li>
+							<li>Stage the affected files</li>
+							<li>Commit (with a good message)</li>
+							<li>Push to the remote</li>
 						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
 					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
+
+					<section><h2>A commit should encompass a single change</h2>
+
+						<ul>
+						<li>May be multiple files</li>
+						<li>May include new files</li>
+						<li>Should not do multiple things</li>
+						</ul>
+					</section>
+
+					<section><h2>Commit messages should be something worthwhile</h2>
+
+						<h3>Examples of good commit messages</h3>
+
+						<ul>
+						<li><q>Add projectplace homepage box</q></li>
+						<li><q>Remove protocol from Google Fonts URL</q></li>
+						<li><q>Added support for new limelight player</q></li>
+						<li><q>Changed version of Google Analytics call</q></li>
+						</ul>
+					</section>
+					<section><h3>Examples of bad messages</h3>
+
+						<ul>
+						<li><q>Per Linda</q></li>
+						<li><q>I should commit more</q></li>
+						<li><q>Cleaning up</q></li>
+						</ul>
+						
+					</section>
+
+					<section><h2>Advanced Concepts</h2>
+						<dl>
+							<dt>Diff</dt>
+							<dd>Comparing the differences between two documents is known as a <code>diff</code>, and can be done with any number of tools, including Beyond Compare, which has full support for use as a git diff tool.</dd>
+							<dt>Merge</dt>
+							<dd>When merging two branches, sometimes Git has trouble reconciling the changes, and you'll be required to fix them by hand. In this case, a merge tool is used to help the process. Again, Beyond Compare has support for git and can be used as your merge tool.</dd>
+						</dl>						
+					</section>
+
+					<section><h2>Advanced Concepts (cont.)</h2>
+						<dl>
+							<dt>Blame</dt>
+							<dd>A blame in Git is a view of a document, line-by-line that shows who made the last change to a file, and in which commit. It's useful for blaming people for bugs, but moreso to know who to ask if you don't know why something was done the way that it was.</dd>
+							<dt>Submodules</dt>
+							<dd>Submodules are Git repositories within repositories. This can be very useful for including a project as a dependency or a library within another project, so that it can easily be updated, and to force the correct version. You should not, however, make changes to a submodule, as it becomes a huge pain.</dd>
+						</dl>						
+					</section>
+
+
+					<section><h2>Learn More about Git</h2>
+						<ul>
+						<li>
+						<a href="http://git-scm.com/">Git Homepage</a>
+						</li><li>
+						<a href="http://guides.github.com/">Github Guides</a>
+						</li><li>
+						<a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">Command-Line Cheat Sheet</a>
+						</li><li>
+						<a href="http://gitimmersion.com/">Git Immersion (Tutorials)</a>
+						</li><li>
+						<em>Pro Git</em> Book<ul>
+						<li>
+						<a href="http://git-scm.com/book">Online</a>
+						</li><li>
+						<a href="http://www.amazon.com/gp/product/1430218339?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1430218339&amp;linkCode=as2&amp;tag=git-sfconservancy-20">Dead Tree Version</a>
+						</li><li>
+						<a href="https://github.s3.amazonaws.com/media/progit.en.pdf">PDF</a>
+						</li><li>
+						<a href="https://github.s3.amazonaws.com/media/pro-git.en.mobi">mobi</a>
+						</li><li>
+						<a href="https://github.s3.amazonaws.com/media/progit.epub">ePub</a>
+						</li>
+						</ul>
+						</li><li>
+						<a href="http://www.codeschool.com/courses/git-real">Git Real</a> (free online interactive course by Code School)
+						</li><li>
+						<a href="http://try.github.com/">Try Git</a> (free basic interactive tutorial by Code School and Github)
+						</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section><h1>SourceTree</h1>
+					</section>
+
+					<section><h2>What is SourceTree?</h2>
+
+						<p>SourceTree is a GUI for Git. It makes life easier. It's free.</p>
+
+					<h2>Configuration</h2>
+						<ol>
+						<li>Use SourceTree's embedded Git, when asked</li>
+						<li>Set up your Github account information</li>
+						<li>HTTPS is easier to set up than SSH for authentication</li>
+						</ol>
+					</section>
+
+					<section><h2>Using SourceTree</h2>
+
+						<p>To use SourceTree, it's the same terminology we've been using, but it provides easier views into:</p>
+
+						<ul>
+						<li>Pending Changes</li>
+						<li>Staged Files</li>
+						<li>History</li>
+						</ul>
+
+						<p>It's still the same order:</p>
+
+						<ol>
+						<li>Pull from the remote</li>
+						<li>Work on the files you need to change</li>
+						<li>Stage files for commit</li>
+						<li>Commit with a good message</li>
+						<li>Push to remote</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section><h1>Github</h1>
+					</section>
+
+					<section><h2>What is Github?</h2>
+
+						<p>Github is, at its simplest, a server for remote repositories.</p>
+
+						<p>It also combines "social" and project management features into the application and makes it easy for people to collaborate on a project.</p>
+
+						<p>Open-source (public) repositories are free and you can have as many as you want.</p>
+
+						<p>Everyone on the team has a Github account.</p>
+					</section>
+
+					<section><h2>Other Cool Github Features</h2>
+
+						<ul>
+						<li>Issues</li>
+						<li>README.md</li>
+						<li>Github Pages (web site)</li>
+						<li>Wiki</li>
+						<li>Analytics</li>
+						<li>Kanban boards (via Chrome extension)</li>
+						<li>Forks and pull requests</li>
+						<li>Gist</li>
+						<li>Very extensible via API</li>
+						</ul>
+					</section>	
+				</section>
+
+				<section>
+					<section><h1>Git-flow</h1>
+					</section>
+
+					<section><h2>What is Git-flow?</h2>
+
+						<p>Git-flow is a structured methodology for managing a project in Git, using branches and merging, as well as the tools that manage those processes. Kinda complicated, really powerful. Support in SourceTree.</p>
+						<p id="gitflow"><a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" title="Gitflow"><img src="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" alt="Diagram of the gitflow workflow" style="width: 20%; height: 20%;"></a></p>
+					</section>
+
+					<section><h2>Branches in git-flow</h2>
+						<dl>
+							<dt><code>master</code></dt>
+							<dd>This is the default branch in a Git repository and is created at repository creation.</dd>
+							<dt><code>develop</code></dt>
+							<dd>Working branch, or "edge." Holds new development that will be released into production in the next cycle</dd>
+							<dt><code>feature/[name]</code></dt>
+							<dd>Branches for development of new features, especially large ones that may take multiple release cycles to be ready for production</dd>
+							<dt><code>release/[number]</code></dt>
+							<dd>Code being prepared for production. Changes on this branch are only bug fixes. QA branch</dd>
+							<dt><code>hotfix/[number]</code></dt>
+							<dd>Immediate bug fix to production code</dd>
+						</dl>						
+					</section>
+
+					<section><h2>Add a new feature (feature branch)</h2>
+						<ul>
+						<li>Branched off of <code>develop</code></li>
+						<li>Work continues on new <code>feature</code> branch</li>
+						<li>Merged back into <code>develop</code></li>
+						</ul>
+					</section>
+
+					<section><h2>Create a new release</h2>
+
+						<ul>
+						<li>
+						<code>develop</code> branched into <code>release</code> branch<ul>
+						<li>
+						Any new changes after this point wait for the next cycle
+						</li>
+						</ul>
+						</li><li>
+						Bug fixes and QA on <code>release</code> branch
+						</li><li>
+						<code>release</code> merged back into <code>develop</code> and <code>master</code><ul>
+						<li>
+						<code>master</code> receives all new changes on <code>develop</code> that are QA'ed and production-ready
+						</li><li>
+						<code>develop</code> receives all the bug fixes so that they don't need to be changed again in next release
+						</li>
+						</ul>
+						</li>
+						</ul>
+					</section>
+
+					<section><h2>Hotfix</h2>
+
+						<ul>
+						<li>
+						<code>master</code> branched to <code>hotfix</code> branch
+						</li><li>
+						Fixes made to <code>hotfix</code>
+						</li><li>
+						<code>hotfix</code> merged back into <code>master</code> and <code>develop</code><ul>
+						<li>
+						No new features, only fixes to production code
+						</li><li>
+						<code>develop</code> receives the changes
+						</li>
+						</ul>
+						</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<section><h1>Sublime Text</h1>
+					</section>
+
+					<section><h2>What is Sublime Text?</h2>
+						<blockquote>
+						<p>Sublime Text is a sophisticated text editor for code, markup and prose.<br>
+						You'll love the slick user interface, extraordinary features and amazing performance.</p>
+						</blockquote>
+
+						<p>It's a really cool text editor for code. It's not an IDE.</p>						
+					</section>
+
+					<section><h2>Features</h2>
+
+						<ul>
+						<li>
+						Extensible
+						</li><li>
+						Customizable
+						</li><li>
+						Go-to with <code>Ctrl+P</code>
+						</li><li>
+						Split editing
+						</li><li>
+						Tabs
+						</li><li>
+						Open a folder
+						</li><li>
+						Nice themes
+						</li><li>
+						Multiple selections
+						</li>
+						</ul>
+					</section>
+
+					<section><h2>Download it</h2>
+
+						<ul>
+						<li>
+						<a href="http://www.sublimetext.com/3">Sublime Text 3</a>
+						</li><li>
+						Or you can Google "sublime text 3"
+						</li>
+						</ul>
+					</section>
+
+					<section><h2>Package Control</h2>
+
+						<blockquote>
+						<p>The Sublime Text package manager that makes it exceedingly simple to find, install and keep packages up-to-date.</p>
+						</blockquote>
+
+						<p>It installs plugins and stuff really easily</p>
+
+						<p><a href="https://sublime.wbond.net/">Package Control</a> or Google "package control"</p>
+					</section>
+
+					<section><h3>Learn More</h3>
+
+						<p><a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2" title="">Free tutorial from Tuts+</a> <small>Full disclosure: I haven't used this tutorial, I just found it online</small></p>
+					</section>
+
+					<section><h2>vim</h2>
+
+						<ul>
+						<li>
+						Text editor based from the command line
+						</li><li>
+						Extremely powerful, but also very complicated and hard to use
+						</li><li>
+						High efficiency because everything is controlled from the keyboard
+						</li><li>
+						Massive extensibility and customization options
+						</li>
+						</ul>
 					</section>
 				</section>
 
 				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
+					<section><h1>Exercises & Practice</h1>						
+					</section>
+
+					<section><h2>Git Real</h2>
+						<p>Go over the <a href="https://www.codeschool.com/courses/git-real">Git Real</a> course</p>
+					</section>
+
+					<section><h2>Independent</h2>
+						<ol>
+							<li>
+							Create a new Git repository on your computer. Name it whatever you want.
+							</li><li>
+							Add an <code>index.html</code> file to the directory. Make sure it is a valid HTML page with some content.
+							</li><li>
+							Commit this change
+							</li><li>
+							Add a CSS file at <code>css/style.css</code> and link it into your index.html file. Add whatever basic stylings you would like
+							</li><li>
+							Commit these changes
+							</li>
+							</ol>
+
+					</section>
+
+					<section><h2>Independent (cont.)</h2>
+						<ol start="6">
+							<li><li>
+							Create a remote repository for this on github and push these two changes to the remote.
+							</li><li>
+							Add jQuery to the page (you can use a CDN source or download it), and add a JavaScript file at <code>js/main.js</code> that logs something to the console on DOM ready. Make sure they are both linked to the <code>index.html</code> page
+							</li><li>
+							Commit these changes
+							</li><li>
+							Revert your CSS commit
+							</li>
+							</ol>
+
+					</section>
+
+					<section><h2>Independent (cont.)</h2>
+						<ol start="10"><li>
+							Push to the remote
+							</li><li>
+							Initialize Git-flow on the repository
+							</li><li>
+							Create a feature branch called <code>css</code> and add a CSS file again.
+							</li><li>
+							Commit the changes and finish the feature
+							</li><li>
+							Push <code>develop</code> branch to the remote
+							</li>
+							</ol>
+
+					</section>
+
+					<section><h2>Independent (cont.)</h2>
+						<ol start="15"><li>
+							Start a new release branch: <code>1.0.0</code>
+							</li><li>
+							Add a README.md file
+							</li><li>
+							Commit
+							</li><li>
+							Finish the release
+							</li><li>
+							Push all changes to the remote
+							</li>
+							</ol>
+
+					</section>
+
+					<section><h2>Discussion Questions</h2>
+
+						<p>Answer the questions in the <a href="https://github.com/crockett95/ll1-exercise">example repository</a></p>
+					</section>
+
 				</section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+				<section><h1>Questions?</h1>					
 				</section>
 
 			</div>
 
 		</div>
+		<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+		<div id="blueimp-gallery" class="blueimp-gallery">
+		    <div class="slides"></div>
+		    <h3 class="title"></h3>
+		    <a class="prev">‹</a>
+		    <a class="next">›</a>
+		    <a class="close">×</a>
+		    <a class="play-pause"></a>
+		    <ol class="indicator"></ol>
+		</div>
 
 		<script src="lib/js/head.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/blueimp-gallery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/reveal.min.js"></script>
 
 		<script>
@@ -388,6 +598,17 @@ function linkify( selector ) {
 				]
 			});
 
+		</script>
+
+		<script>
+		document.getElementById('gitflow').onclick = function (event) {
+		    event = event || window.event;
+		    var target = event.target || event.srcElement,
+		        link = target.src ? target.parentNode : target,
+		        options = {index: link, event: event},
+		        links = this.getElementsByTagName('a');
+		    blueimp.Gallery(links, options);
+		};
 		</script>
 
 	</body>
