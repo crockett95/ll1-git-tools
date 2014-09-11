@@ -176,8 +176,7 @@ Github is, at its simplest, a server for remote repositories.
 It also combines "social" and project management features into the application
 and makes it easy for people to collaborate on a project.
 
-Open-source (public) repositories are free and you can have as many as you
-want.
+Open-source (public) repositories are free and you can have as many as you want.
 
 Everyone on the team has a Github account.
 
@@ -391,11 +390,9 @@ It installs plugins and stuff really easily
 
 ### Learn More
 
--   [Free tutorial from Tuts+][4][^17]
+-   [Free tutorial from Tuts+][4]
 
 [4]: <http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2>
-
-[^17]: Full disclosure: I haven't used this tutorial, I just found it online
 
 vim
 ---
