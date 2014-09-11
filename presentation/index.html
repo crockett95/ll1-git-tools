@@ -86,9 +86,9 @@
 						<p>Access via "command prompt" on Windows. Usually called "terminal" on Posix systems</p>
 
 						<pre><code class="bash" data-trim>$ cd ~/Development/rmcp
-	$ bower install angular --save
-	$ subl .
-	$ grunt serve
+$ bower install angular --save
+$ subl .
+$ grunt serve
 						</code></pre>
 
 					</section>
@@ -332,6 +332,11 @@
 							<dd>Working branch, or "edge." Holds new development that will be released into production in the next cycle</dd>
 							<dt><code>feature/[name]</code></dt>
 							<dd>Branches for development of new features, especially large ones that may take multiple release cycles to be ready for production</dd>
+						</dl>						
+					</section>
+
+					<section><h2>Branches in git-flow (cont.)</h2>
+						<dl>
 							<dt><code>release/[number]</code></dt>
 							<dd>Code being prepared for production. Changes on this branch are only bug fixes. QA branch</dd>
 							<dt><code>hotfix/[number]</code></dt>
@@ -449,9 +454,9 @@
 						<p><a href="https://sublime.wbond.net/">Package Control</a> or Google "package control"</p>
 					</section>
 
-					<section><h3>Learn More</h3>
+					<section><h2>Learn More</h2>
 
-						<p><a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2" title="">Free tutorial from Tuts+</a> <small>Full disclosure: I haven't used this tutorial, I just found it online</small></p>
+						<p><a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2" title="">Free tutorial from Tuts+</a><br><small>Full disclosure: I haven't used this tutorial, I just found it online</small></p>
 					</section>
 
 					<section><h2>vim</h2>
@@ -496,8 +501,7 @@
 					</section>
 
 					<section><h2>Independent (cont.)</h2>
-						<ol start="6">
-							<li><li>
+						<ol start="6"><li>
 							Create a remote repository for this on github and push these two changes to the remote.
 							</li><li>
 							Add jQuery to the page (you can use a CDN source or download it), and add a JavaScript file at <code>js/main.js</code> that logs something to the console on DOM ready. Make sure they are both linked to the <code>index.html</code> page
