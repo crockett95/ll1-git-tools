@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Load MathJax for math display -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+  <title></title>
+</head>
+<body>
+<div class="container">
+
+<h1>Tools and Basics</h1>
+
+<h2>Topics</h2>
+
+<ul>
+<li>
+<p>Git</p><ul>
+<li>
+<p>git-flow</p>
+</li><li>
+<p>Github</p>
+</li><li>
+<p>Sourcetree</p>
+</li>
+</ul>
+</li><li>
+<p>Text Editors</p><ul>
+<li>
+<p>Sublime Text</p>
+</li><li>
+<p>A brief look at vim</p>
+</li>
+</ul>
+</li><li>
+<p>The command line</p>
+</li>
+</ul>
+
+<h2>Command Line</h2>
+
+<p>It may not be all that pretty, but it's really powerful and efficient.</p>
+
+<p>Access via "command prompt" on Windows. Usually called "terminal" on Posix systems</p>
+
+<pre><code>$ cd ~/Development/rmcp
+$ bower install angular --save
+$ subl .
+$ grunt serve
+</code></pre>
+
+<h2>Git</h2>
+
+<h3>What is Git?</h3>
+
+<p>Git is a distributed revision control&nbsp;and&nbsp;source code management (SCM) system with an emphasis on speed,&nbsp;data integrity,&nbsp;and support for distributed, non-linear workflows.</p>
+
+<ul>
+<li>
+<p>Every Git working directory is a full-fledged repository</p>
+</li><li>
+<p>It has history</p>
+</li><li>
+<p>It has full version tracking</p>
+</li><li>
+<p>It can be used independent of a central server</p>
+</li>
+</ul>
+
+<h3>History</h3>
+
+<p>Git was created in 2005 by Linus Torvalds (creator and namesake of Linux kernel), when the service that had been providing source code management for the Linux kernal project decided that it would no longer provide free use to the project. It was created in C as a set of extensible tools to manage the Linux project, and has become the most popular system for version control and source code management.</p>
+
+<h3>Basic Terminology</h3>
+
+<p><strong>Repository</strong> - Full set of files and historical revision data on those files that are being managed together within version control</p>
+
+<p><strong>Working Directory</strong> - The directory on a user's computer that contains the files under version control management, i.e. your copy of the files</p>
+
+<p><strong>Commit</strong> - ​A snapshot of the files being version controlled at the time of creation or the act of creating this snapshot</p>
+
+<p><strong>Branch</strong> - A timeline of commits</p>
+
+<p><strong>Tag</strong> - A name attached to a single commit</p>
+
+<p><strong>HEAD</strong> - The most recent commit on the selected branch</p>
+
+<p><strong>Staging Area</strong> - The set of files that have been changed, whose changes will be captured in the next commit</p>
+
+<p><strong>Remote</strong> - The server or centralized store for a repository</p>
+
+<p><strong>Clone</strong> - Copy a repository from a remote to a new working directory, maintaining the link to the remote</p>
+
+<p><strong>Checkout</strong> - Select a commit to use in your working directory</p>
+
+<p><strong>Merge</strong> - Combine two branches back together into a single branch</p>
+
+<p><strong>Revert</strong> - Create a commit that undoes a previous commit</p>
+
+<h3>How to Use Git to Source Control a Project</h3>
+
+<ol>
+<li>
+<p>Pull the latest version from the remote</p>
+</li><li>
+<p>Make edits</p>
+</li><li>
+<p>Stage the affected files</p>
+</li><li>
+<p>Commit (with a good message)</p>
+</li><li>
+<p>Push to the remote</p>
+</li>
+</ol>
+
+<h3>More about making a change</h3>
+
+<h4>A commit should encompass a single change</h4>
+
+<ul>
+<li>
+<p>May be multiple files</p>
+</li><li>
+<p>May include new files</p>
+</li><li>
+<p>Should not do multiple things</p>
+</li>
+</ul>
+
+<h4>Commit messages should be something worthwhile</h4>
+
+<h5>Examples of good commit messages</h5>
+
+<ul>
+<li>
+<p>"Add projectplace homepage box"</p>
+</li><li>
+<p>"Remove protocol from Google Fonts URL"</p>
+</li><li>
+<p>"Added support for new limelight player"</p>
+</li><li>
+<p>"Changed version of Google Analytics call"</p>
+</li>
+</ul>
+
+<h5>Examples of bad messages</h5>
+
+<ul>
+<li>
+<p>"Per Linda"</p>
+</li><li>
+<p>"​I should commit more"</p>
+</li><li>
+<p>"Cleaning up"</p>
+</li>
+</ul>
+
+<h3>SourceTree</h3>
+
+<p>SourceTree is a GUI for Git. It makes life easier. It's free.</p>
+
+<h4>Configuration</h4>
+
+<ol>
+<li>
+<p>Use SourceTree's embedded Git, when asked</p>
+</li><li>
+<p>Set up your Github account information</p>
+</li><li>
+<p>HTTPS is easier to set up than SSH for authentication</p>
+</li>
+</ol>
+
+<h4>Using SourceTree</h4>
+
+<p>To use SourceTree, it's the same terminology we've been using, but it provides easier views into:</p>
+
+<ul>
+<li>
+<p>Pending Changes</p>
+</li><li>
+<p>Staged Files</p>
+</li><li>
+<p>History</p>
+</li>
+</ul>
+
+<p>It's still the same order:</p>
+
+<ol>
+<li>
+<p>Pull from the remote</p>
+</li><li>
+<p>Work on the files you need to change</p>
+</li><li>
+<p>Stage files for commit</p>
+</li><li>
+<p>Commit with a good message</p>
+</li><li>
+<p>Push to remote</p>
+</li>
+</ol>
+
+<h3>Github</h3>
+
+<p>Github is, at its simplest, a server for remote repositories.</p>
+
+<p>It also combines "social" and project management features into the application and makes it easy for people to collaborate on a project.</p>
+
+<p>Open-source (public) repositories are free and you can have as many as you want.</p>
+
+<p>Everyone on the team has a Github account.</p>
+
+<h4>Other Cool Features</h4>
+
+<ul>
+<li>
+<p>Issues</p>
+</li><li>
+<p>README.md</p>
+</li><li>
+<p>Github Pages (web site)</p>
+</li><li>
+<p>Wiki</p>
+</li><li>
+<p>Analytics</p>
+</li><li>
+<p>Kanban boards (via Chrome extension)</p>
+</li><li>
+<p>Forks and pull requests</p>
+</li><li>
+<p>Gist</p>
+</li><li>
+<p>Very extensible via API</p>
+</li>
+</ul>
+
+<h3>Git-flow</h3>
+
+<p>Git-flow is a structured methodology for managing a project in Git, using branches and merging, as well as the tools that manage those processes. Kinda complicated, really powerful. Support in SourceTree.</p>
+
+<figure>
+<img src="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png">
+</figure>
+
+<h4>Branches in git-flow</h4>
+
+<ul>
+<li>
+<p><code>master</code> - This is the default branch in a Git repository and is created at repository creation.</p><ul>
+<li>
+<p>Git-flow uses this for production code. Official release history (every commit on master maps to a release version)</p>
+</li>
+</ul>
+</li><li>
+<p><code>develop</code> - Working branch, or "edge." Holds new development that will be released into production in the next cycle</p>
+</li><li>
+<p><code>feature/[name]</code> - Branches for development of new features, especially large ones that may take multiple release cycles to be ready for production</p>
+</li><li>
+<p><code>release/[number]</code> - Code being prepared for production. Changes on this branch are only bug fixes. QA branch</p>
+</li><li>
+<p><code>hotfix/[number]</code> - Immediate bug fix to production code</p>
+</li>
+</ul>
+
+<h4>The flow</h4>
+
+<h5>Add a new feature (feature branch)</h5>
+
+<ul>
+<li>
+<p>Branched off of <code>develop</code></p>
+</li><li>
+<p>Work continues on new <code>feature</code> branch</p>
+</li><li>
+<p>Merged back into <code>develop</code></p>
+</li>
+</ul>
+
+<h5>Create a new release</h5>
+
+<ul>
+<li>
+<p><code>develop</code> branched into <code>release</code> branch</p><ul>
+<li>
+<p>Any new changes after this point wait for the next cycle</p>
+</li>
+</ul>
+</li><li>
+<p>Bug fixes and QA on <code>release</code> branch</p>
+</li><li>
+<p><code>release</code> merged back into <code>develop</code> and <code>master</code></p><ul>
+<li>
+<p><code>master</code> receives all new changes on <code>develop</code> that are QA'ed and production-ready</p>
+</li><li>
+<p><code>develop</code> receives all the bug fixes so that they don't need to be changed again in next release</p>
+</li>
+</ul>
+</li>
+</ul>
+
+<h5>Hotfix</h5>
+
+<ul>
+<li>
+<p><code>master</code> branched to <code>hotfix</code> branch</p>
+</li><li>
+<p>Fixes made to <code>hotfix</code></p>
+</li><li>
+<p><code>hotfix</code> merged back into <code>master</code> and <code>develop</code></p><ul>
+<li>
+<p>No new features, only fixes to production code</p>
+</li><li>
+<p><code>develop</code> receives the changes</p>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>Advanced Concepts</h3>
+
+<h4>Diff</h4>
+
+<p>Comparing the differences between two documents is known as a <code>diff</code>, and can be done with any number of tools, including Beyond Compare, which has full support for use as a git diff tool.</p>
+
+<h4>Merge</h4>
+
+<p>When merging two branches, sometimes Git has trouble reconciling the changes, and you'll be required to fix them by hand. In this case, a merge tool is used to help the process. Again, Beyond Compare has support for git and can be used as your merge tool.</p>
+
+<h4>Blame</h4>
+
+<p>A blame in Git is a view of a document, line-by-line that shows who made the last change to a file, and in which commit. It's useful for blaming people for bugs, but moreso to know who to ask if you don't know why something was done the way that it was.</p>
+
+<h4>Submodules</h4>
+
+<p>Submodules are Git repositories within repositories. This can be very useful for including a project as a dependency or a library within another project, so that it can easily be updated, and to force the correct version. You should not, however, make changes to a submodule, as it becomes a huge pain.</p>
+
+<h3>Learn More</h3>
+
+<ul>
+<li>
+<p><a href="http://git-scm.com/">Git Homepage</a></p>
+</li><li>
+<p><a href="http://guides.github.com/">Github Guides</a></p>
+</li><li>
+<p><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">Command-Line Cheat Sheet</a></p>
+</li><li>
+<p><a href="http://gitimmersion.com/">Git Immersion (Tutorials)</a></p>
+</li><li>
+<p><em>Pro Git</em> Book</p><ul>
+<li>
+<p><a href="http://git-scm.com/book">Online</a></p>
+</li><li>
+<p><a href="http://www.amazon.com/gp/product/1430218339?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1430218339&amp;linkCode=as2&amp;tag=git-sfconservancy-20">Dead Tree Version</a></p>
+</li><li>
+<p><a href="https://github.s3.amazonaws.com/media/progit.en.pdf">PDF</a></p>
+</li><li>
+<p><a href="https://github.s3.amazonaws.com/media/pro-git.en.mobi">mobi</a></p>
+</li><li>
+<p><a href="https://github.s3.amazonaws.com/media/progit.epub">ePub</a></p>
+</li>
+</ul>
+</li><li>
+<p><a href="http://www.codeschool.com/courses/git-real">Git Real</a> (free online interactive course by Code School)</p>
+</li><li>
+<p><a href="http://try.github.com/">Try Git</a> (free basic interactive tutorial by Code School and Github)</p>
+</li>
+</ul>
+
+<h2>Sublime Text</h2>
+
+<blockquote>
+<p>Sublime Text is a sophisticated text editor for code, markup and prose.<br>
+You'll love the slick user interface, extraordinary features and amazing performance.</p>
+</blockquote>
+
+<p>It's a really cool text editor for code. It's not an IDE.</p>
+
+<h3>Features</h3>
+
+<ul>
+<li>
+<p>Extensible</p>
+</li><li>
+<p>Customizable</p>
+</li><li>
+<p>Go-to with <code>Ctrl+P</code></p>
+</li><li>
+<p>Split editing</p>
+</li><li>
+<p>Tabs</p>
+</li><li>
+<p>Open a folder</p>
+</li><li>
+<p>Nice themes</p>
+</li><li>
+<p>Multiple selections</p>
+</li>
+</ul>
+
+<h3>Download it</h3>
+
+<ul>
+<li>
+<p><a href="http://www.sublimetext.com/3">Sublime Text 3</a></p>
+</li><li>
+<p>Or you can Google "sublime text 3"</p>
+</li>
+</ul>
+
+<h3>Package Control</h3>
+
+<blockquote>
+<p>The Sublime Text package manager that makes it exceedingly simple to find, install and keep packages up-to-date.</p>
+</blockquote>
+
+<p>It installs plugins and stuff really easily</p>
+
+<p><a href="https://sublime.wbond.net/">Package Control</a> or Google "package control"</p>
+
+<h3>Learn More</h3>
+
+<ul>
+<li>
+<p><a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2">Free tutorial from Tuts+</a></p>
+</li>
+</ul>
+
+<h2>vim</h2>
+
+<ul>
+<li>
+<p>Text editor based from the command line</p>
+</li><li>
+<p>Extremely powerful, but also very complicated and hard to use</p>
+</li><li>
+<p>High efficiency because everything is controlled from the keyboard</p>
+</li><li>
+<p>Massive extensibility and customization options</p>
+</li>
+</ul>
+
+<h2>Practice Exercises</h2>
+
+<ol>
+<li>
+<p>Go over the <a href="https://www.codeschool.com/courses/git-real">Git Real</a> course</p>
+</li>
+</ol>
+
+<ol>
+<li>
+<p>Do the following activity</p><ol>
+<li>
+<p>Create a new Git repository on your computer. Name it whatever you want.</p>
+</li><li>
+<p>Add an <code>index.html</code> file to the directory. Make sure it is a valid HTML page with some content.</p>
+</li><li>
+<p>Commit this change</p>
+</li><li>
+<p>Add a CSS file at <code>css/style.css</code> and link it into your index.html file. Add whatever basic stylings you would like</p>
+</li><li>
+<p>Commit these changes</p>
+</li><li>
+<p>Create a remote repository for this on github and push these two changes to the remote.</p>
+</li><li>
+<p>Add jQuery to the page (you can use a CDN source or download it), and add a JavaScript file at <code>js/main.js</code> that logs something to the console on DOM ready. Make sure they are both linked to the <code>index.html</code> page</p>
+</li><li>
+<p>Commit these changes</p>
+</li><li>
+<p>Revert your CSS commit</p>
+</li><li>
+<p>Push to the remote</p>
+</li><li>
+<p>Initialize Git-flow on the repository</p>
+</li><li>
+<p>Create a feature branch called <code>css</code> and add a CSS file again.</p>
+</li><li>
+<p>Commit the changes and finish the feature</p>
+</li><li>
+<p>Push <code>develop</code> branch to the remote</p>
+</li><li>
+<p>Start a new release branch: <code>1.0.0</code></p>
+</li><li>
+<p>Add a README.md file</p>
+</li><li>
+<p>Commit</p>
+</li><li>
+<p>Finish the release</p>
+</li><li>
+<p>Push all changes to the remote</p>
+</li>
+</ol>
+</li><li>
+<p>Answer the questions in the example repository</p>
+</li>
+</ol>
+
+<p>Your final repository should resemble the one <a href="https://github.com/crockett95/ll1-exercise">here</a></p>
+
+
+</div>
+</body>
+</html>
